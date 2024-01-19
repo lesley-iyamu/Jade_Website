@@ -1,0 +1,106 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5px;
+    top: 0;
+    position: fixed;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    z-index: 9999;
+    animation: gradient_anim 23s ease infinite;
+    background-size: 200%; /* Ensure the background covers the entire linear gradient */
+    color: rgb(0, 0, 0);
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color:white;
+    }
+}
+
+@keyframes gradient_anim {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url(/Raleway-Regular.ttf);
+
+}
+#name{
+    overflow:hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 4px;
+}
+
+#name::after {
+    content: "|";
+    animation: blink 0.7s infinite alternate;
+}
+
+#name{margin-left: 30px;
+    font-family: Raleway;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 10px #000;
+}
+    
+#navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center; 
+    /* margin-right: 30px; */
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 15px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration:none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    font-family: Raleway;
+    transition: 0.3s ease-in-out;
+    text-shadow: 2px 2px 10px #000;
+}
+
+#navbar li a:hover{
+    color: #42adff
+}
+
+#navbar li a:hover::after{
+    content:"";
+    width: 30%;
+    height: 2px;
+    background: #42adff;
+    position:absolute;
+    bottom: -4px;
+    left: 20px;
+}
